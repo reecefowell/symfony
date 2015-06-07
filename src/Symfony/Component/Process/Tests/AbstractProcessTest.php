@@ -24,7 +24,7 @@ abstract class AbstractProcessTest extends \PHPUnit_Framework_TestCase
 {
     public function testThatProcessDoesNotThrowWarningDuringRun()
     {
-        @trigger_error('Test Error', E_USER_NOTICE);
+        @@trigger_error('Test Error', E_USER_NOTICE);
         $process = $this->getProcess("php -r 'sleep(3)'");
         $process->run();
         $actualError = error_get_last();

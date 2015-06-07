@@ -376,7 +376,7 @@ class NumberFormatter
     {
         // The original NumberFormatter does not support this format type
         if ($type == self::TYPE_CURRENCY) {
-            trigger_error(__METHOD__.'(): Unsupported format type '.$type, \E_USER_WARNING);
+            @trigger_error(__METHOD__.'(): Unsupported format type '.$type, \E_USER_WARNING);
 
             return false;
         }
@@ -533,7 +533,7 @@ class NumberFormatter
     public function parse($value, $type = self::TYPE_DOUBLE, &$position = 0)
     {
         if ($type == self::TYPE_DEFAULT || $type == self::TYPE_CURRENCY) {
-            trigger_error(__METHOD__.'(): Unsupported format type '.$type, \E_USER_WARNING);
+            @trigger_error(__METHOD__.'(): Unsupported format type '.$type, \E_USER_WARNING);
 
             return false;
         }

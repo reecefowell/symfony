@@ -170,7 +170,7 @@ class DebugClassLoaderTest extends \PHPUnit_Framework_TestCase
     {
         set_error_handler('var_dump', 0);
         $e = error_reporting(0);
-        trigger_error('', E_USER_DEPRECATED);
+        @trigger_error('', E_USER_DEPRECATED);
 
         class_exists('Test\\'.__NAMESPACE__.'\\'.$class, true);
 
@@ -200,7 +200,7 @@ class DebugClassLoaderTest extends \PHPUnit_Framework_TestCase
     {
         set_error_handler('var_dump', 0);
         $e = error_reporting(0);
-        trigger_error('', E_USER_NOTICE);
+        @trigger_error('', E_USER_NOTICE);
 
         class_exists('Symfony\Bridge\Debug\Tests\Fixtures\ExtendsDeprecatedParent', true);
 
@@ -226,7 +226,7 @@ class DebugClassLoaderTest extends \PHPUnit_Framework_TestCase
 
         set_error_handler('var_dump', 0);
         $e = error_reporting(0);
-        trigger_error('', E_USER_NOTICE);
+        @trigger_error('', E_USER_NOTICE);
 
         class_exists('Test\\'.__NAMESPACE__.'\\Float', true);
 

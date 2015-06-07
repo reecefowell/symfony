@@ -224,7 +224,7 @@ if (interface_exists('JsonSerializable')) {
     {
         public function jsonSerialize()
         {
-            trigger_error('This error is expected', E_USER_WARNING);
+            @trigger_error('This error is expected', E_USER_WARNING);
 
             return array();
         }
